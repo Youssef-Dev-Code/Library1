@@ -1,4 +1,4 @@
-#include <Structs.h>
+##include <Structs.h>
 #include <File3.h>
 
 int main(int argc, char const *argv[])
@@ -28,13 +28,28 @@ int main(int argc, char const *argv[])
             Author_Create(&Head_Author);
             break;
         case 4:
-            
+            printf("Type 1 to save a single theme\nType 2 to save a all themes\n");
+            scanf("%c", &x);
+            switch (x)
+            {
+            case 1:
+                Save_Theme(Theme_List);
+                break;
+            case 2:
+                Save_Themes(Theme_List);
+                break;
+            default:
+                printf("Invalid Value!\n");
+                break;
+            }
+            break;
+        case 5:
+            Save_Book(&Head_Book);
             break;
         default:
             printf("Invalid Value!!\n");
             break;
         }
     }
-    
     return 0;
 }
